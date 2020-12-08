@@ -1,0 +1,12 @@
+.post1 {
+    background: darkgreen;
+    color: white;
+    padding: 30px;
+    display: inline-block;
+}
+.post2 {
+    background: tomato;
+    color: black;
+    padding: 30px;
+    display: inline-block;
+}
