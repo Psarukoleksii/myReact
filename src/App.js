@@ -1,50 +1,25 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import './App.css';
-import AllUsers from "./Components/all-users/AllUsers";
-import AllPosts from "./Components/all-posts/AllPosts";
-import AllComments from "./Components/all-comments/AllComments";
-
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <Router>
-                    <div>
-                        <Link to={"/users"}>Users</Link>
-                    </div>
-                    <div>
-                        <Link to={"/posts"}>Posts</Link>
-                    </div>
-                    <div>
-                        <Link to={'/comments'}>Comments</Link>
-                    </div>
-
-                    <div className={'app-route'}>
-                        <Switch>
-                            <Route path={'/users'} render={(props)=>{
-                                return <AllUsers />
-                            }}>
-                            </Route>
-
-                            <Route path={'/posts'} render={(props)=>{
-                                return <AllPosts />
-                            }}>
-                            </Route>
-                            <Route path={'/comments'} render={(props)=>{
-                                return <AllComments />
-                            }} />
-
-                        </Switch>
-
-                    </div>
+import Header from "./Components/Header";
+import  {Route, Switch, BrowserRouter as Router} from "react-router-dom";
+import Main from "./Components/Main";
+import About from "./Components/About";
+import Users from "./Components/Users";
+import UserId from "./Components/UserId";
 
 
-
-                </Router>
-            </div>
-        );
-    }
+function App(){
+    return (
+        <>
+            <Header />
+            <Router>
+                <Switch>
+                    <Route exact path={'/'} component={Main} /> // exact - точний збіг. Інакше буде показувати перший збіг - Main
+                    <Route path={'/about'} component={About} />
+                    <Route exact path={'/users'} component={Users} />
+                    <Route path={'/users/:id'} component={UserId} />
+                </Switch>
+            </Router>
+        </>
+    )
 }
 
 export default App;
