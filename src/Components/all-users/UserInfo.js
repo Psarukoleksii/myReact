@@ -1,31 +1,28 @@
 import React, {Component} from 'react';
 import UserServise from "../../Servises/UserServise";
+import {withRouter} from "react-router-dom";
 
 class UserInfo extends Component {
-    userService = new UserServise();
 
     state = {
-        user: null
+        user: null,
     }
+
+    UserServise = new UserServise();
 
     async componentDidMount() {
-        const { id } = this.props.match.params;
-        const user = await this.userService.getOneUser(id)
+        const {userId} = this.props;
+        const user = await this.UserServise.getUser(userId);
         this.setState({user})
     }
-
-
 
     render() {
         let {user} = this.state;
         return (
             <div>
-                {
-                    user && user.name
-                }
+                {user && <div>{user.id} - {user.name} - {user.email}</div>}
             </div>
         );
     }
 }
-
 export default UserInfo;

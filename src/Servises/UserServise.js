@@ -5,7 +5,7 @@ export default class UserServise {
        return await fetch(this.url).then(value=> value.json());
     }
 
-    getOneUser(id) {
-        return fetch(`${this.url}/${id}`).then(value => value.json())
+    async getUser(id){
+        return await fetch(this.url + '/' + id).then(value=> value.json());
     }
 }

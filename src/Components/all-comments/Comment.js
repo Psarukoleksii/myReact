@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
-import {withRouter} from "react-router-dom";
+import {withRouter, Link} from "react-router-dom";
 
 class Comment extends Component {
     render() {
-        let {asd, match: {url}} = this.props;
+        let {xxx, match:{url}} = this.props;
         return (
             <div>
-                {asd.id} - {asd.name} - {asd.body} <Link to={`${url}/${asd.id}`}>Info of post</Link>
+                {xxx.id} - {xxx.name} - {xxx.body} - <Link to={`${url}/${xxx.id}`}>Details of comment</Link>
             </div>
         );
     }

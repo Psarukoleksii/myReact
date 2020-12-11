@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
-import User from "./User";
 import UserServise from "../../Servises/UserServise";
-import './AllUsers.css';
-import {Link, withRouter, Switch, Route} from "react-router-dom";
+import User from "./User";
+import {Route, Switch, withRouter} from "react-router-dom";
 import UserInfo from "./UserInfo";
 
 class AllUsers extends Component {
 
-    state = {users: []}
+    UserServise = new UserServise();
 
-    userServise = new UserServise()
+    state = {
+        users: [],
+    }
 
     async componentDidMount() {
-        let users = await this.userServise.users();
-        this.setState({users: users})
+        let users = await this.UserServise.users();
+        this.setState({users})
     }
 
     render() {
@@ -22,14 +23,17 @@ class AllUsers extends Component {
         return (
             <div>
                 {
-                    users.map(user=> <User item={user} key={user.id}/>)
+                    users.map(value=> <User item={value} key={value.id}/>)
                 }
 
-                <div className={'UserInfo'}>
+                <hr />
                     <Switch>
-                        <Route path={`${url}/:id`} exact={true} component={UserInfo}/>
+                        <Route path={`${url}/:id`} render={(props)=>{
+                            const {match:{params:{id}}} = props;
+                            return <UserInfo userId={id} key={id}/>
+                        }}/>
                     </Switch>
-                </div>
+                <hr />
             </div>
         );
     }

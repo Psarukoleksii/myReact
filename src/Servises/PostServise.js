@@ -4,4 +4,8 @@ export default class PostServise{
     async posts(){
         return await fetch(this.url).then(value => value.json());
     }
+
+    async getOnePost(id){
+        return await fetch(this.url + '/' + id).then(value=> value.json());
+    }
 }
