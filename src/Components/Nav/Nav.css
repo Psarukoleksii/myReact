@@ -1,0 +1,40 @@
+div img{
+    width: 70px;
+    display: inline-block;
+    margin-left: 15px;
+    transform: rotate(7200deg);
+    transition: 60s;
+}
+
+div nav {
+    background:darkslategrey;
+    height: 70px;
+    display: flex;
+}
+ul {
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 0px;
+}
+li {
+    display: inline-block;
+    margin: 10px;
+}
+a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 1px;
+}
+
+a:hover{
+    transform: scale(1.08);
+    transition: 0.5s;
+}
+
+.link {
+    display: inline-block;
+}

@@ -1,0 +1,4 @@
+.userSection:hover{
+    transform: scale(1.01);
+    transition: 0.5s;
+}

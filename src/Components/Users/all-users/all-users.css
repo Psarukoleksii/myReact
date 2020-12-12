@@ -1,0 +1,61 @@
+.allUsers{
+    background: black;
+    color: white;
+    margin: 50px;
+    padding: 20px;
+    flex: 1;
+}
+
+
+.allUsers a {
+    padding: 5px 10px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.myUsers {
+    display: flex;
+    flex-direction: row;
+}
+
+.userInfo{
+    flex: 1;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.myUsers {
+    display: flex;
+}
+
+.userInfo p {
+    margin: 0px;
+}
+.userInfo h2{
+    margin: 0px;
+}
+
+.allUsers button {
+    background: none;
+    color: white;
+    padding: 6px 10px;
+    font-size: 16px;
+    border: 1px solid white;
+}
+.allUsers button:hover{
+    transform: scale(1.08);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.myTitle {
+    background: black;
+    height: 50px;
+}
+
+.myTitle h2 {
+    margin: 0;
+    color: white;
+    text-align: center;
+    padding: 7px;
+}
+

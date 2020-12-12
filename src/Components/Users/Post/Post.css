@@ -1,0 +1,9 @@
+.posts {
+    height: 500px;
+}
+.post {
+    background: darkslategrey;
+    color: white;
+    margin: 10px 200px 10px 200px;
+    padding: 15px;
+}
