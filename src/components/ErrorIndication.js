@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
-import Users from "./Users/Users.js";
 
-class Class1 extends Component {
+class ErrorIndication extends Component {
     render() {
         return (
             <div>
-                <Users />
+                <h3>Ooops, we have some problem</h3>
             </div>
         );
     }
 }
 
-export default Class1;
+export default ErrorIndication;
