@@ -16,11 +16,20 @@ class User extends Component {
     onFormSubmit = (e) => {
         e.preventDefault();
         let id = +this.myInput.current.value;
-        let user = this.userServise.getUserById(id).catch(this.onError)
-        this.setState({user});
+        this.userServise
+            .getUserById(id)
+            .then(user=>{
+                console.log(user);
+                this.setState({user})
+            })
+            .catch(this.onError)
+
     }
 
     onError = (err) =>{
+        console.log('--------------');
+        console.log(err);
+        console.log('--------------');
         this.setState({error: true, user: null})
     }
 
