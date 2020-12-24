@@ -1,0 +1,38 @@
+
+.planet .img{
+    flex: 1;
+}
+
+.planet .text{
+    flex: 3;
+    margin-left: 40px;
+    margin-top: 25px;
+}
+
+.planet .text h2{
+    font-family: SansSerif;
+    color: white;
+}
+
+.planet .text p{
+    font-family: SansSerif;
+    display: block;
+    color: white;
+}
+
+.planet .img img{
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    margin: 20px
+}
+
+.planet .text .item{
+    height: 1px;
+    background: white;
+    width: 200px;
+}
+
+.planetInfo{
+    display: flex;
+}

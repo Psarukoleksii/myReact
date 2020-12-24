@@ -1,0 +1,19 @@
+.sectionPerson{
+    display: flex;
+}
+
+.personImg{
+    flex: 1;
+    margin-right: 40px;
+}
+
+.personText{
+    flex: 1;
+    margin-top: 95px;
+}
+
+.personImg img {
+    margin-top: 50px;
+    width: 250px;
+    border-radius: 10px;
+}
