@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PeopleService from "../../../Services/PeopleService";
 import OnePerson from "./OnePerson";
-import {Route, Switch, withRouter} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import PersonInfo from "../PersonInfo/PersonInfo";
 import './PeopleList.css';
 
@@ -13,9 +13,11 @@ class PeopleList extends Component {
 
     PeopleService = new PeopleService();
 
-    async componentDidMount() {
-        let people = await this.PeopleService.getAllPeople();
-        this.setState({people})
+    componentDidMount() {
+        this.PeopleService
+            .getAllPeople()
+            .then(people =>
+                this.setState({people}))
     }
 
     render() {
@@ -29,12 +31,10 @@ class PeopleList extends Component {
                     }
                 </div>
                 <div className={'peopleInfo'}>
-                    <Switch>
                         <Route path={`${url}/:id`} render={(props) => {
                             let {match: {params: {id}}} = props;
                             return <PersonInfo userId={id} key={id}/>
                         }}/>
-                    </Switch>
                 </div>
             </div>
         );
