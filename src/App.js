@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './App.css'
-import Header from "./Header/Header";
+import Counter from "./HomeWork7/Counter/Counter";
 
 class App extends Component {
 
     render() {
         return (
             <div>
-               <Header />
+                <Counter />
             </div>
         );
     }
