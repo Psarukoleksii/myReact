@@ -5,7 +5,7 @@ import Person from "../Person/Person";
 import Loading from "../../Loading/Loading";
 import ErrorIndication from "../../Error/ErrorIndication";
 import './PersonInfo.css'
-import NonePeople from "../NonePeople/NonePeople";
+// import NonePeople from "../NonePeople/NonePeople";
 
 class PersonInfo extends Component {
 
@@ -17,14 +17,16 @@ class PersonInfo extends Component {
         error: false,
     }
 
-    async componentDidMount() {
+    componentDidMount() {
         let {userId} = this.props;
-        let user = await this.PeopleService.getOnePerson(userId)
+        this.PeopleService.getOnePerson(userId)
+            .then(user =>
+                this.setState({user: user, loading: false}))
             .catch(this.onError)
-        this.setState({user: user, loading: false})
     }
 
     onError = (err) => {
+        console.error(err);
         this.setState({
             loading: false,
             error: true
@@ -36,7 +38,9 @@ class PersonInfo extends Component {
         let {userId} = this.props;
         const IcoLoading = loading ? <Loading/> : null;
         const ErrorInd = error ? <ErrorIndication/> : null;
-        const InfoAboutUser = !error && !loading ? <Person user={user} userId={userId}/> : null;
+        const InfoAboutUser = !error && !loading
+            ? <Person user={user} userId={userId}/>
+            : null;
 
 
         return (

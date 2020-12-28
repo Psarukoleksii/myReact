@@ -38,6 +38,9 @@ class RandomPlanet extends Component {
     }
 
     onError = (err) => {
+
+        console.error(err);
+
         this.setState({
             name: null,
             population: null,
@@ -50,11 +53,22 @@ class RandomPlanet extends Component {
 
     render() {
         let {id, name, population, rotationPeriod, diameter, loading, error} = this.state;
-        const ErrorMessage = error ? <ErrorIndication/> : null;
-        const OnePlanet = !error && !loading ?
-            <PlanetInfo id={id} name={name} population={population} rotationPeriod={rotationPeriod}
-                        diameter={diameter}/> : null;
-        const IcoLoading = loading ? <Loading/> : null;
+        const ErrorMessage = error
+            ? <ErrorIndication/>
+            : null;
+
+        const OnePlanet = !error && !loading
+            ? <PlanetInfo
+                id={id}
+                name={name}
+                population={population}
+                rotationPeriod={rotationPeriod}
+                diameter={diameter}/>
+                : null;
+
+        const IcoLoading = loading
+            ? <Loading/>
+            : null;
 
         return (
             <div className={'planet'}>
