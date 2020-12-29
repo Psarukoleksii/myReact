@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import './App.css'
-import Counter from "./HomeWork7/Counter/Counter";
+import {useSelector} from "react-redux";
+
 
 class App extends Component {
 
     render() {
         return (
             <div>
-                <Counter />
+
+
             </div>
         );
     }
