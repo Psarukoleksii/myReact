@@ -3,7 +3,7 @@ const initialState = {
 }
 
 export default (state = initialState, action) =>{
-    switch (action.types) {
+    switch (action.type) {
         default:{
             return state;
         }

@@ -1,1 +1,10 @@
+.body {
+    margin: 0;
+}
 
+header {
+    background: darkgreen;
+    padding: 10px 15px;
+    color: white;
+    text-align: center;
+}
